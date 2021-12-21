@@ -2,7 +2,7 @@ const express = require('express');
 
 const cors = require('cors');
 
-const Cart = require('./db/contactForm');
+const Form = require('./db/contactForm');
 const app = express();
 
 app.use(express.json());
@@ -19,12 +19,12 @@ app.get('/get-data', (req, res) => {
 
 app.post('/contact', async (req, res) => {
 	console.log(req.body)
-	const cart = await Cart.create(req.body);
+	const form = await Form.create(req.body);
 
 	res.status(201).send({
 		status: 'success',
 		data: {
-			contact: cart,
+			contact: form,
 		},
 	});
 });
