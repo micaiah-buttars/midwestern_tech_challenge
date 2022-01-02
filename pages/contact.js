@@ -80,6 +80,9 @@ export default function Contact() {
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                 />
+                                <label className={styles.label}>
+                                    Required
+                                </label>
                             </div>
 
                             <textarea
